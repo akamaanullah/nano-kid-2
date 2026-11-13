@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home</title>
+<meta name="description" content="Premium streetwear for men, women and kids — tees, hoodies, jackets, joggers and custom prints. Delivered across Pakistan.">
+<meta name="theme-color" content="#09090A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2309090A'/%3E%3Cpath d='M9 24 21 8' stroke='%23FF2E2E' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<script src="js/config.js"></script>
+<script src="js/boot.js"></script>
+
+<main id="main">
+  <!-- ============ HERO SLIDER ============ -->
+  <section class="hero" id="hero" aria-roledescription="carousel" aria-label="Featured drops">
+    <div class="hero-art" aria-hidden="true"></div>
+    <div class="hero-stage">
+      <div class="hero-word" id="heroWord" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <div class="hero-kick swap" id="heroKick" style="--h:0"></div>
+        <h1 class="hero-title" id="heroTitle" style="--h:1"></h1>
+        <p class="hero-tag swap" id="heroTag" style="--h:2"></p>
+        <div class="hero-var swap" id="heroVar" style="--h:3"><div class="lab">Colour — <b id="heroColName"></b></div><div class="thumbs" id="heroThumbs"></div></div>
+        <div class="hero-buy" style="--h:4">
+          <div class="hero-price swap" id="heroPrice"></div>
+          <div class="hero-btns"><button class="btn btn-solid" id="heroAdd" data-magnetic>Add to cart</button><button class="btn btn-line" id="heroBuy" data-magnetic>Buy now</button></div>
+        </div>
+      </div>
+      <div class="hero-fig" id="heroFig" aria-live="polite">
+        <div class="hero-ring" aria-hidden="true"></div>
+        <div class="hero-float" id="heroFloat"></div>
+        <a class="hero-badge-w" id="heroBadge" href="shop.html" aria-label="Shop the collection" data-magnetic>
+          <div class="hero-badge" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="bc" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text><textPath href="#bc" textLength="286" lengthAdjust="spacing">NEW SEASON · HEAVYWEIGHT ·</textPath></text></svg></div>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="square"><path d="M3 12h17M14 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+      <div class="hero-nav"><button class="prev" id="hPrev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 12h17M14 6l6 6-6 6"/></svg></button><button class="next" id="hNext" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 12h17M14 6l6 6-6 6"/></svg></button><div class="hero-scroll"><i></i>Scroll</div></div>
+      <div class="hero-dots" id="heroDots" role="tablist" aria-label="Slides"></div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true"><div class="mq-track" id="mq1"></div></div>
+
+  <!-- ============ CATEGORIES ============ -->
+  <section class="sec" id="cats">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="eyebrow" data-reveal>Shop by category</span><h2 class="display h-lg" data-split>Pick your<br>uniform</h2></div><a class="link-arrow" href="shop.html" data-reveal>View all products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a></div>
+      <div class="cats" id="catGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ TRENDING ============ -->
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="eyebrow" data-reveal>Trending now</span><h2 class="display h-lg" data-split>Moving<br>fast</h2></div><div class="car-ctrl" data-reveal><button class="prev" id="cPrev" aria-label="Scroll left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 12h17M14 6l6 6-6 6"/></svg></button><button class="next" id="cNext" aria-label="Scroll right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 12h17M14 6l6 6-6 6"/></svg></button></div></div>
+      <div class="carousel" id="trend"></div>
+      <div class="car-bar"><i id="trendBar"></i></div>
+    </div>
+  </section>
+
+  <div class="marquee alt" aria-hidden="true"><div class="mq-track" id="mq2"></div></div>
+
+  <!-- ============ DROP COUNTDOWN ============ -->
+  <section class="drop" id="drop">
+    <div class="drop-word" data-parallax="-.06" aria-hidden="true">DROP</div>
+    <div class="wrap drop-in">
+      <div>
+        <span class="eyebrow" data-reveal>Next drop</span>
+        <h2 class="display h-xl" data-split id="dropName">Winter Drop 08</h2>
+        <p data-reveal>Heavyweight hoodies, quilted bombers and brushed joggers — limited to 300 pieces per colourway. When it's gone, it's gone.</p>
+        <div class="cd" id="cd" data-reveal aria-live="off">
+          <div class="cd-box"><span class="cd-num" data-u="d">00</span><small>Days</small></div>
+          <div class="cd-box"><span class="cd-num" data-u="h">00</span><small>Hours</small></div>
+          <div class="cd-box"><span class="cd-num" data-u="m">00</span><small>Mins</small></div>
+          <div class="cd-box"><span class="cd-num" data-u="s">00</span><small>Secs</small></div>
+        </div>
+        <form class="notify" id="notifyForm" data-reveal novalidate><input type="email" placeholder="Your email for early access" aria-label="Email for early access" required><button class="btn btn-red" type="submit">Notify me</button></form>
+      </div>
+      <div class="drop-img" data-reveal="zoom"><span class="drop-tag">Limited · 300 pcs</span><img id="dropImg" alt="Upcoming drop preview" loading="lazy" data-parallax-img></div>
+    </div>
+  </section>
+
+  <!-- ============ LOOKBOOK ============ -->
+  <section class="sec" id="lookbook">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="eyebrow" data-reveal>Lookbook · Season 08</span><h2 class="display h-lg" data-split>On the<br>streets</h2></div><a class="link-arrow" href="shop.html?sort=new" data-reveal>Shop the looks <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a></div>
+      <div class="look" id="lookGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ MINI DROP (KIDS) ============ -->
+  <section class="mini" id="kids">
+    <div class="mini-word" data-parallax="-.05" aria-hidden="true">MINI</div>
+    <div class="wrap mini-in">
+      <div class="mini-copy">
+        <span class="eyebrow" data-reveal>Kids collection · Ages 2–14</span>
+        <h2 class="display h-xl" data-split>Mini<br><span class="red">Drop</span></h2>
+        <p data-reveal>Tees, hoodies, jackets and joggers cut for growing kids — the same heavyweight fabrics, softer hand-feel and easy-wear fits. Sizes 2-3Y to 13-14Y.</p>
+        <div class="age-chips" data-reveal><a href="shop.html?gender=kids&amp;size=2-3Y,3-4Y">Ages 2–4</a><a href="shop.html?gender=kids&amp;size=5-6Y,7-8Y">Ages 5–8</a><a href="shop.html?gender=kids&amp;size=9-10Y,11-12Y,13-14Y">Ages 9–14</a></div>
+        <div class="mini-cta" data-reveal><a class="btn btn-red" href="shop.html?gender=kids" data-magnetic>Shop kids <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a><a class="btn btn-line" href="customize.html?garment=tee&amp;kids=1" data-magnetic>Design a mini tee</a></div>
+      </div>
+      <div class="mini-collage" data-reveal="zoom">
+        <a class="mc mc1" href="shop.html?gender=kids&amp;cat=hoodies"><img id="mini1" alt="Kids playwear" loading="lazy"><span class="mc-tag"><small>Everyday</small>Hoodies &amp; tees</span></a>
+        <a class="mc mc2" href="shop.html?gender=kids&amp;cat=jackets"><img id="mini2" alt="Kids outdoor play" loading="lazy"><span class="mc-tag"><small>Outdoor</small>Jackets</span></a>
+        <a class="mc mc3" href="shop.html?gender=kids&amp;sort=new"><img id="mini3" alt="Kids shirts" loading="lazy"><span class="mc-tag"><small>New in</small>Shirts</span></a>
+        <span class="mc-badge" aria-hidden="true">2–14<small>YRS</small></span>
+      </div>
+    </div>
+    <div class="wrap mini-shelf">
+      <div class="sec-head"><div><span class="eyebrow" data-reveal>Kids picks</span><h2 class="display h-lg" data-split>Little<br>legends</h2></div><div class="car-ctrl" data-reveal><button class="prev" id="kPrev" aria-label="Scroll kids left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 12h17M14 6l6 6-6 6"/></svg></button><button class="next" id="kNext" aria-label="Scroll kids right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 12h17M14 6l6 6-6 6"/></svg></button></div></div>
+      <div class="carousel" id="kidsCar"></div>
+      <div class="car-bar"><i id="kidsBar"></i></div>
+    </div>
+  </section>
+
+  <!-- ============ CUSTOM PRINT ============ -->
+  <section class="sec custom" id="custom">
+    <div class="wrap custom-in">
+      <div>
+        <span class="eyebrow" data-reveal>Custom studio</span>
+        <h2 class="display h-lg" data-split>Your design.<br><span class="red">Our blanks.</span></h2>
+        <p class="lead" data-reveal>Put your name, crew or artwork on our heavyweight tees, hoodies and sweatshirts. One piece or one hundred — printed in Lahore and delivered in 5–7 days.</p>
+        <div class="steps" data-stagger>
+          <div class="step" data-reveal><i>01</i><div><b>Send your art</b><span>Text, logo or full artwork. We'll clean it up free.</span></div></div>
+          <div class="step" data-reveal><i>02</i><div><b>Pick a blank</b><span>Tee, oversized tee, hoodie or sweatshirt in 12 colours.</span></div></div>
+          <div class="step" data-reveal><i>03</i><div><b>We print &amp; ship</b><span>DTF or screen print, quality-checked, COD available.</span></div></div>
+        </div>
+        <a class="btn btn-red" href="customize.html" data-magnetic>Start your design <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 12h17M14 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="mock" data-reveal="right">
+        <span class="mock-note">Live preview</span>
+        <div class="mock-stage"><img id="mockImg" alt="Blank tee ready for your print" loading="lazy"><div class="print" id="print">YOUR<br>NAME</div></div>
+        <div class="mock-ctrl"><div class="field"><label for="printTxt">Type your print</label><input id="printTxt" maxlength="22" value="Your Name" autocomplete="off"></div>
+          <div class="chips" id="printChips" role="group" aria-label="Print colour"><button class="chip on" style="--c:#09090A" data-c="#09090A" aria-label="Black"></button><button class="chip" style="--c:#FF2E2E" data-c="#FF2E2E" aria-label="Red"></button><button class="chip" style="--c:#F2EFE9" data-c="#F2EFE9" aria-label="White" data-light></button><button class="chip" style="--c:#E3A91A" data-c="#E3A91A" aria-label="Gold"></button></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="sec" id="reviews">
+    <div class="wrap rev-wrap">
+      <div class="rev-score" data-reveal>
+        <span class="eyebrow">Real customers</span>
+        <span class="big display">4.9<small>/5</small></span>
+        <div id="revStars"></div>
+        <p>From 2,300+ verified orders across Pakistan. Fit, fabric and delivery — rated by the people wearing it.</p>
+      </div>
+      <div class="revs" id="revGrid" data-stagger></div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="sec news">
+    <div class="wrap">
+      <span class="eyebrow" data-reveal>Join the crew</span>
+      <h2 class="display h-xl" data-split>Get <span class="red">Rs. 500</span> off<br>your first order</h2>
+      <p data-reveal>Early access to drops, restocks and members-only prices. No spam — just heat.</p>
+      <form id="newsForm" data-reveal novalidate><input type="email" placeholder="Enter your email" aria-label="Email address" required><button class="btn btn-red" type="submit" data-magnetic>Subscribe</button></form>
+      <p class="fine" data-reveal>By subscribing you agree to receive marketing emails. Unsubscribe anytime.</p>
+    </div>
+  </section>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

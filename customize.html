@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Design Studio</title>
+<meta name="description" content="Design your own tee, hoodie, sweatshirt, tank or polo with a live preview. Add text, images and graphics, pick DTF, screen print or embroidery, and order in bulk.">
+<meta name="theme-color" content="#09090A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2309090A'/%3E%3Cpath d='M9 24 21 8' stroke='%23FF2E2E' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/studio.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Bebas+Neue&family=Pacifico&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Grotesk:wght@400;700&display=swap">
+</head>
+<body class="studio-page">
+<script src="js/config.js"></script>
+<script src="js/boot.js"></script>
+
+<main id="main">
+  <section class="studio-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><i>/</i><span style="color:var(--text)">Design studio</span></nav>
+      <div class="sh-row"><h1 class="display h-md">Design <span class="red">studio</span></h1><p>Pick a garment, drop in your text and artwork, and see it live. Printed in Lahore, delivered in 5–7 days.</p></div>
+    </div>
+  </section>
+
+  <div class="wrap studio" id="studio">
+    <!-- ================= LIVE PREVIEW ================= -->
+    <div class="stage-col">
+      <div class="stage" id="stageWrap">
+        <div class="stage-bar top">
+          <div class="seg" role="group" aria-label="Garment side"><button type="button" class="on" data-view="front">Front</button><button type="button" data-view="back">Back</button></div>
+          <div class="bgs" role="group" aria-label="Preview background"><button type="button" class="on" data-bg="dark" style="--c:#1b1b1f" aria-label="Dark studio"></button><button type="button" data-bg="light" style="--c:#dedad1" aria-label="Light studio"></button><button type="button" data-bg="red" style="--c:#c4161c" aria-label="Red studio"></button></div>
+        </div>
+        <svg id="stage" viewBox="0 0 400 460" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Live garment preview"></svg>
+        <div class="stage-bar side" role="group" aria-label="Zoom">
+          <button type="button" id="zIn" aria-label="Zoom in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 5v14M5 12h14"/></svg></button>
+          <button type="button" id="zOut" aria-label="Zoom out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M5 12h14"/></svg></button>
+          <button type="button" id="zReset" aria-label="Reset zoom" class="zr">1×</button>
+          <button type="button" id="guideBtn" class="on" aria-label="Toggle print guides" title="Print guides"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 4h16v16H4z" stroke-dasharray="3 3"/></svg></button>
+        </div>
+        <div class="stage-bar bottom">
+          <button type="button" id="undoBtn" aria-label="Undo" title="Undo (Ctrl+Z)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 7 4 12l5 5"/><path d="M4 12h10a6 6 0 0 1 0 12"/></svg><span>Undo</span></button>
+          <button type="button" id="redoBtn" aria-label="Redo" title="Redo (Ctrl+Y)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="m15 7 5 5-5 5"/><path d="M20 12H10a6 6 0 0 0 0 12"/></svg><span>Redo</span></button>
+          <button type="button" id="resetBtn" aria-label="Reset design" title="Reset design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 4v6h6"/><path d="M5.5 15a8 8 0 1 0 1.5-8L4 10"/></svg><span>Reset</span></button>
+          <button type="button" id="dlBtn" class="dl" aria-label="Download preview as PNG"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg><span>Download PNG</span></button>
+        </div>
+        <p class="stage-hint" id="stageHint">Drag a layer to move · corners resize · top handle rotates</p>
+      </div>
+    </div>
+
+    <!-- ================= CONTROLS ================= -->
+    <div class="panel-col">
+      <div class="panel" id="panel">
+      <section class="stp open" data-step="garment">
+        <button class="stp-h" type="button" aria-expanded="true"><i>01</i><span>Garment</span><em id="sum-garment">Hoodie</em><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m2 4 4 4 4-4"/></svg></button>
+        <div class="stp-b"><div class="stp-in"><div class="g-grid" id="garmentGrid" role="radiogroup" aria-label="Garment type"></div></div></div>
+      </section>
+      <section class="stp" data-step="color">
+        <button class="stp-h" type="button" aria-expanded="false"><i>02</i><span>Garment colour</span><em id="sum-color">Black</em><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m2 4 4 4 4-4"/></svg></button>
+        <div class="stp-b"><div class="stp-in"><div class="c-grid" id="colorGrid" role="radiogroup" aria-label="Garment colour"></div><label class="cust-col"><span>Custom colour</span><input type="color" id="colorPick" value="#111111" aria-label="Pick a custom garment colour"><b id="colorHex">#111111</b></label></div></div>
+      </section>
+      <section class="stp" data-step="size">
+        <button class="stp-h" type="button" aria-expanded="false"><i>03</i><span>Size</span><em id="sum-size">M</em><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m2 4 4 4 4-4"/></svg></button>
+        <div class="stp-b"><div class="stp-in"><div class="seg wide" role="group" aria-label="Size range"><button type="button" class="on" data-sset="adult">Adult</button><button type="button" data-sset="kids">Kids</button></div><div class="sizes" id="sizeGrid" role="radiogroup" aria-label="Size"></div><p class="note" id="sizeNote"></p><button type="button" class="txt-link" data-size-guide>View size guide</button></div></div>
+      </section>
+      <section class="stp" data-step="method">
+        <button class="stp-h" type="button" aria-expanded="false"><i>04</i><span>Print method</span><em id="sum-method">DTF</em><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m2 4 4 4 4-4"/></svg></button>
+        <div class="stp-b"><div class="stp-in"><div class="m-grid" id="methodGrid" role="radiogroup" aria-label="Print method"></div><p class="note" id="methodNote"></p></div></div>
+      </section>
+      <section class="stp open" data-step="add">
+        <button class="stp-h" type="button" aria-expanded="true"><i>05</i><span>Add text, images &amp; graphics</span><em id="sum-add">Add your design</em><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m2 4 4 4 4-4"/></svg></button>
+        <div class="stp-b"><div class="stp-in"><div class="add-row">
+          <button type="button" class="add-t" id="addText"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M5 6V4h14v2M12 4v16M9 20h6"/></svg><b>Add text</b><small>Names, slogans, numbers</small></button>
+          <button type="button" class="add-t" id="addImage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M4 4h16v16H4z"/><path d="m4 16 5-5 4 4 3-3 4 4"/><circle cx="15.5" cy="8.5" r="1.5"/></svg><b>Upload image</b><small>PNG, JPG, SVG · up to 5 MB</small></button>
+        </div>
+        <div class="drop" id="dropZone">Drop an image or logo here</div>
+        <p class="lab">Graphics library</p>
+        <div class="lib" id="lib"></div></div></div>
+      </section>
+      <section class="stp open" data-step="layers">
+        <button class="stp-h" type="button" aria-expanded="true"><i>06</i><span>Layers &amp; placement</span><em id="sum-layers">0 layers</em><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m2 4 4 4 4-4"/></svg></button>
+        <div class="stp-b"><div class="stp-in"><div class="lay-list" id="layerList" aria-label="Design layers"></div>
+        <div id="editor" class="editor"></div></div></div>
+      </section>
+      <section class="stp" data-step="qty">
+        <button class="stp-h" type="button" aria-expanded="false"><i>07</i><span>Quantity &amp; bulk pricing</span><em id="sum-qty">1 pc</em><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m2 4 4 4 4-4"/></svg></button>
+        <div class="stp-b"><div class="stp-in"><div class="qty-row"><div class="qty" id="qtyBox"><button type="button" id="qMinus" aria-label="Decrease quantity">−</button><input id="qtyIn" type="number" min="1" max="999" value="1" aria-label="Quantity"><button type="button" id="qPlus" aria-label="Increase quantity">+</button></div><span class="note" id="qtyNote"></span></div>
+        <table class="tiers" id="tiers"><thead><tr><th>Quantity</th><th>Discount</th></tr></thead><tbody></tbody></table></div></div>
+      </section>
+      </section-end>
+      </div>
+      <div class="panel-foot" id="panelFoot">
+        <details class="brk" id="brk"><summary><span>Price breakdown</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m2 8 4-4 4 4"/></svg></summary><div id="brkBody"></div></details>
+        <div class="tot-row"><div><small id="perPc">Per piece</small><b id="totalPrice">Rs. 0</b></div>
+          <div class="foot-btns"><button type="button" class="btn btn-line btn-sm" id="quoteBtn">Request quote</button><button type="button" class="btn btn-red" id="addCart" data-magnetic>Add to cart <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 12h17M14 6l6 6-6 6"/></svg></button></div></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<input type="file" id="fileIn" accept="image/png,image/jpeg,image/webp,image/svg+xml,image/gif" hidden>
+
+<div class="modal" id="quoteModal" role="dialog" aria-label="Request a quote" aria-modal="true">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-box" style="width:min(720px,100%);padding:clamp(24px,4vw,44px)">
+    <button class="modal-x" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="m5 5 14 14M19 5 5 19"/></svg></button>
+    <p class="eyebrow">Bulk &amp; custom orders</p>
+    <h3 class="display h-md" style="margin:12px 0 18px">Request a quote</h3>
+    <div class="q-sum" id="quoteSum"></div>
+    <form id="quoteForm" novalidate>
+      <div class="row2"><div class="field"><label for="qName">Full name</label><input id="qName" autocomplete="name"><div class="em">Please enter your name.</div></div><div class="field"><label for="qPhone">Phone / WhatsApp</label><input id="qPhone" type="tel" autocomplete="tel" placeholder="03XX XXXXXXX"><div class="em">Enter a valid phone number.</div></div></div>
+      <div class="field"><label for="qEmail">Email</label><input id="qEmail" type="email" autocomplete="email"><div class="em">Enter a valid email address.</div></div>
+      <div class="field"><label for="qNotes">Notes (deadline, extra sizes, artwork files…)</label><textarea id="qNotes" style="min-height:90px"></textarea></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-red" type="submit">Send request</button><a class="btn btn-line" id="qWa" href="#" target="_blank" rel="noopener">Send on WhatsApp</a></div>
+    </form>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/studio.js"></script>
+</body>
+</html>

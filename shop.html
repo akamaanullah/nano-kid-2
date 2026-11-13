@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shop</title>
+<meta name="description" content="Browse tees, hoodies, jackets and more — filter by size, colour and price.">
+<meta name="theme-color" content="#09090A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2309090A'/%3E%3Cpath d='M9 24 21 8' stroke='%23FF2E2E' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<script src="js/config.js"></script>
+<script src="js/boot.js"></script>
+
+<main id="main">
+  <div id="shopHead"></div>
+  <div class="wrap shop">
+    <aside class="filters" id="filters" aria-label="Filters"></aside>
+    <section aria-label="Products">
+      <div class="toolbar">
+        <button class="filter-btn" id="filterBtn" aria-controls="filters"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M3 6h18M6 12h12M10 18h4"/></svg> Filters</button>
+        <div class="count" id="count" aria-live="polite"></div>
+        <label class="sort"><span class="count">Sort</span><select id="sort" aria-label="Sort products"><option value="featured">Featured</option><option value="new">Newest</option><option value="best">Bestsellers</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="rating">Top rated</option></select></label>
+      </div>
+      <div class="active-f" id="activeF"></div>
+      <div class="grid" id="grid"></div>
+      <div class="more" id="more"></div>
+    </section>
+  </div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>
